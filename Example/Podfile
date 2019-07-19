@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'XJTools_OC_Example' do
+  pod 'XJTools_OC', :path => '../'
+
+  target 'XJTools_OC_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

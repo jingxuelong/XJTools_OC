@@ -1,0 +1,6 @@
+framework module XJTools_OC {
+  umbrella header "XJTools_OC-umbrella.h"
+
+  export *
+  module * { export * }
+}
