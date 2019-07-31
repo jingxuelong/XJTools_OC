@@ -56,7 +56,7 @@
     return self.frame.size.width;
 }
 - (CGFloat)xj_Height{
-    return self.frame.origin.x;
+    return self.frame.size.height;
 }
 -(CGFloat)xj_CenterX{
     return self.center.x;
