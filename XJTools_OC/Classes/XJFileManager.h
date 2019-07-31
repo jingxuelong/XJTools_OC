@@ -47,6 +47,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)pathIsFolder:(NSString*)path;
 
 /**
+ 根据传入路径，中间文件夹 和文件名返回路径
+
+ @param path 传入path
+ @param directoryName 创建文件夹名称 传nil为不创建 @"file" 可创建多层@"file/abc"
+ @param fileName 文件名
+ @return 返回创建后path  为nil 时候为创建失败
+ */
++ (NSString*)getPath:(NSString*)path andDirectoryName:(nullable NSString*)directoryName andFileName:(NSString*)fileName;
+
+/**
  指定路径文件或者文件夹大小
 
  @param path 文件或文件夹路径
@@ -55,11 +65,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (long long)fileSizeAtPath:(NSString*)path;
 
 /**
- 清空Library 中cache文件夹
-
- @return 是否成功
+ 清空Library 中cache文件夹所有文件
  */
-+ (BOOL)clearCache;
++ (void)clearCache;
+
+/**
+ 清空Library 中cache文件夹用户默认权限添加文件 ***优先使用
+ */
++ (void)clearCacheNormalFiles;
 
 /**
  当前cache文件夹size
@@ -75,6 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return NSString类型
  */
 + (NSString*)changeStringSize:(long long)size;
+
 
 @end
 

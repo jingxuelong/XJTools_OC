@@ -22,10 +22,10 @@
     return NSTemporaryDirectory();
 }
 + (NSString *)preferencesPath{
-    return NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+    return NSSearchPathForDirectoriesInDomains(NSPreferencePanesDirectory, NSUserDomainMask, YES).lastObject;
 }
 + (NSString *)cachePath{
-    return NSSearchPathForDirectoriesInDomains(NSPreferencePanesDirectory, NSUserDomainMask, YES).lastObject;
+    return NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
 }
 
 
@@ -35,8 +35,40 @@
     return isFolder;
 }
 
-+ (BOOL)clearCache{
-    return [NSFileManager.defaultManager removeItemAtPath:[self cachePath] error:nil];
++ (NSString*)getPath:(NSString*)path andDirectoryName:(nullable NSString*)directoryName andFileName:(NSString*)fileName{
+    NSString *directoryPath = path;
+    if (directoryName.length) {
+       directoryPath = [path stringByAppendingPathComponent:directoryName];
+    }
+    if (![NSFileManager.defaultManager fileExistsAtPath:directoryPath]) {
+        BOOL success = [NSFileManager.defaultManager createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
+        if (!success) return nil;
+    }
+    return [directoryPath stringByAppendingPathComponent:fileName];
+}
+
+
+
++ (void)clearCache{
+    NSEnumerator *filesEnumerator = [[NSFileManager.defaultManager subpathsAtPath:[self cachePath]] objectEnumerator];
+    NSString *filePath;
+    while ((filePath = [filesEnumerator nextObject]) != nil) {
+        NSString *subPath = [[self cachePath] stringByAppendingPathComponent:filePath];
+        [NSFileManager.defaultManager removeItemAtPath:subPath error:nil];
+    }
+}
+
++ (void)clearCacheNormalFiles{
+    NSEnumerator *filesEnumerator = [[NSFileManager.defaultManager subpathsAtPath:[self cachePath]] objectEnumerator];
+    NSString *filePath;
+    while ((filePath = [filesEnumerator nextObject]) != nil) {
+        NSString *subPath = [[self cachePath] stringByAppendingPathComponent:filePath];
+        NSUInteger integer = [NSFileManager.defaultManager attributesOfItemAtPath:subPath error:nil].filePosixPermissions;
+        //默认写入420权限的文件删除
+        if (integer == 420) {
+            [NSFileManager.defaultManager removeItemAtPath:subPath error:nil];
+        }
+    }
 }
 
 + (long long)cacheDataSize{
