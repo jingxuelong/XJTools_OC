@@ -20,6 +20,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) CGFloat  xj_CenterY;
 
 
+
+/**
+ 根据view截图
+ */
+- (UIImage *)xj_getImageWithView:(UIView *)view;
+
+/**
+ 根据view截图(根据设备scale 高清图)
+ */
+- (UIImage *)xj_getHighQuaImageWithView:(UIView *)view;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

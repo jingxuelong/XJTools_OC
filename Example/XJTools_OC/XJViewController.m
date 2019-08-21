@@ -8,7 +8,6 @@
 
 #import "XJViewController.h"
 #import <objc/runtime.h>
-
 #import <XJTools_OC.h>
 @interface XJViewController ()
 
@@ -65,7 +64,6 @@
             [NSUserDefaults.standardUserDefaults setBool:YES forKey:@"HasWrite"];
             [NSUserDefaults.standardUserDefaults synchronize];
         }
-        
         
         
         [self logFileAndPathSize];

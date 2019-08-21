@@ -1,6 +1,6 @@
 {
   "name": "XJTools_OC",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "summary": "tools",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/jingxuelong/XJTools_OC",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/jingxuelong/XJTools_OC.git",
-    "tag": "0.1.2"
+    "tag": "0.1.3"
   },
   "platforms": {
     "ios": "8.0"

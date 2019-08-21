@@ -11,6 +11,7 @@
 #endif
 
 #import "UIView+XJExtension.h"
+#import "XJCacheManager.h"
 #import "XJFileManager.h"
 #import "XJTools_OC.h"
 

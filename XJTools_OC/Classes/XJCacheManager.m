@@ -8,6 +8,7 @@
 #import "XJCacheManager.h"
 #import <UIKit/UIKit.h>
 #import "XJFileManager.h"
+
 #define XJ_DISH_MEMORY_DIR                  @"XJ_DISH_MEMORY_DIR"
 @interface XJCacheManager()
 

@@ -64,4 +64,25 @@
 - (CGFloat)xj_CenterY{
     return self.center.y;
 }
+
+
+- (UIImage *)xj_getHighQuaImageWithView:(UIView *)view{
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, 1, UIScreen.mainScreen.scale);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    UIImage *image =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+
+- (UIImage *)xj_getImageWithView:(UIView *)view{
+    UIGraphicsBeginImageContext(view.bounds.size);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    UIImage *image =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+
+
 @end
