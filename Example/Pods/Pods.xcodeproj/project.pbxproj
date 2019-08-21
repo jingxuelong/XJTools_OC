@@ -14,6 +14,8 @@
 		7B03BB03BFB5634C52B288E62901A913 /* XJTools_OC.h in Headers */ = {isa = PBXBuildFile; fileRef = AB16675FBE4E258648B2A4F070C8E141 /* XJTools_OC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8122DC3E481F7AB318AEC7D47F5AAE39 /* Pods-XJTools_OC_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29688FDB91EFB9846E6CFDA5F1862488 /* Pods-XJTools_OC_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85B29100BF46EDDE4AAA990DAEC688C9 /* UIView+XJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A97C48189911CD6851F855E209A99 /* UIView+XJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		884EC1E0230D0A9900AC0E6C /* XJCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 884EC1DE230D0A9900AC0E6C /* XJCacheManager.h */; };
+		884EC1E1230D0A9900AC0E6C /* XJCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 884EC1DF230D0A9900AC0E6C /* XJCacheManager.m */; };
 		8865D85A01AAF03DD49F770FB3EC465D /* UIView+XJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE0EEEB210CAC301291D8950F74760 /* UIView+XJExtension.m */; };
 		8D490A172C9DFE74AE1725EDEA6EE5CC /* XJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B62029E016F06E82795BEDFBD2049A54 /* XJFileManager.m */; };
 		9CE6D1BEA515E87CB64C9214AF24CF0E /* Pods-XJTools_OC_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8650EDB77B0EE19B1562E104F1F679A5 /* Pods-XJTools_OC_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,6 +58,8 @@
 		7D0DE44DB22EDABC9FBA97EBB4454CF9 /* Pods-XJTools_OC_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XJTools_OC_Example-Info.plist"; sourceTree = "<group>"; };
 		7E739CE62685A475AAD5989F2DA202D6 /* XJTools_OC.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XJTools_OC.xcconfig; sourceTree = "<group>"; };
 		8650EDB77B0EE19B1562E104F1F679A5 /* Pods-XJTools_OC_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XJTools_OC_Tests-umbrella.h"; sourceTree = "<group>"; };
+		884EC1DE230D0A9900AC0E6C /* XJCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJCacheManager.h; sourceTree = "<group>"; };
+		884EC1DF230D0A9900AC0E6C /* XJCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJCacheManager.m; sourceTree = "<group>"; };
 		8DAD4970C750726E19F2B20993A3BA1D /* XJTools_OC.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XJTools_OC.modulemap; sourceTree = "<group>"; };
 		8EE4DFF8073B38705F52469B4F3B5B5C /* Pods-XJTools_OC_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XJTools_OC_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9627DB073AAE0A9CBED88D8BF50FC29D /* Pods-XJTools_OC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XJTools_OC_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,11 +114,13 @@
 		0E1623468DAE4D81BA96F550702960FE /* XJTools_OC */ = {
 			isa = PBXGroup;
 			children = (
+				AB16675FBE4E258648B2A4F070C8E141 /* XJTools_OC.h */,
 				A49A97C48189911CD6851F855E209A99 /* UIView+XJExtension.h */,
 				6AFE0EEEB210CAC301291D8950F74760 /* UIView+XJExtension.m */,
 				D6CC23771C01586445792EED9511E809 /* XJFileManager.h */,
 				B62029E016F06E82795BEDFBD2049A54 /* XJFileManager.m */,
-				AB16675FBE4E258648B2A4F070C8E141 /* XJTools_OC.h */,
+				884EC1DE230D0A9900AC0E6C /* XJCacheManager.h */,
+				884EC1DF230D0A9900AC0E6C /* XJCacheManager.m */,
 				0EF6D2194EB9289EA34F6D9C36A0B991 /* Pod */,
 				C6193B0E59D7B9CF5C888FE8E3432AA2 /* Support Files */,
 			);
@@ -241,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8122DC3E481F7AB318AEC7D47F5AAE39 /* Pods-XJTools_OC_Example-umbrella.h in Headers */,
+				884EC1E0230D0A9900AC0E6C /* XJCacheManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884EC1E1230D0A9900AC0E6C /* XJCacheManager.m in Sources */,
 				57AFDCB81F2D688701B3666B8951B3CC /* Pods-XJTools_OC_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

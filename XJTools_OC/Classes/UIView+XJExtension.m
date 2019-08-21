@@ -2,7 +2,7 @@
 //  UIView+XJExtension.m
 //  Pods
 //
-//  Created by 荆学龙 on 2019/7/20.
+//  Created by Jingxuelong on 2019/7/20.
 //
 
 #import "UIView+XJExtension.h"

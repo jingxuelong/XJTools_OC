@@ -75,14 +75,11 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [XJFileManager clearCacheNormalFiles];
     [self logFileAndPathSize];
 }
 
 
 - (void)logFileAndPathSize{
-    long long cacheSize = [XJFileManager cacheDataSize];
-    NSLog(@"cacheSize%@",[XJFileManager changeStringSize:cacheSize]);
     
     NSString *filePath = [XJFileManager getPath:XJFileManager.documentsPath andDirectoryName:@"" andFileName:@"name.gif"];
     long long fileSize = [XJFileManager fileSizeAtPath:filePath];

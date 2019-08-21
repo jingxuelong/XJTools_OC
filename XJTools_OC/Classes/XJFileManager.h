@@ -2,7 +2,7 @@
 //  XJFileManager.h
 //  Pods-XJTools_OC_Example
 //
-//  Created by 荆学龙 on 2019/7/19.
+//  Created by Jingxuelong on 2018/4/21.
 //
 
 #import <Foundation/Foundation.h>
@@ -51,10 +51,10 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param path 传入path
  @param directoryName 创建文件夹名称 传nil为不创建 @"file" 可创建多层@"file/abc"
- @param fileName 文件名
+ @param fileName 文件名  file 为nil 时候为创建文件夹路径
  @return 返回创建后path  为nil 时候为创建失败
  */
-+ (NSString*)getPath:(NSString*)path andDirectoryName:(nullable NSString*)directoryName andFileName:(NSString*)fileName;
++ (nullable NSString*)getPath:(NSString*)path andDirectoryName:(nullable NSString*)directoryName andFileName:(nullable NSString*)fileName;
 
 /**
  指定路径文件或者文件夹大小
@@ -64,22 +64,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (long long)fileSizeAtPath:(NSString*)path;
 
-/**
- 清空Library 中cache文件夹所有文件
- */
-+ (void)clearCache;
+
 
 /**
- 清空Library 中cache文件夹用户默认权限添加文件 ***优先使用
- */
-+ (void)clearCacheNormalFiles;
+ 清除m路径文件
 
-/**
- 当前cache文件夹size
-
- @return  size
+ @param path path
+ @return 是否清除成功
  */
-+ (long long)cacheDataSize;
++ (BOOL)clearAllItemsAtPath:(NSString*)path;
+
 
 /**
  返回字符串格式size

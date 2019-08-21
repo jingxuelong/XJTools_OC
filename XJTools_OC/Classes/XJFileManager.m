@@ -2,10 +2,11 @@
 //  XJFileManager.m
 //  Pods-XJTools_OC_Example
 //
-//  Created by 荆学龙 on 2019/7/19.
+//  Created by Jingxuelong on 2018/4/21.
 //
 
 #import "XJFileManager.h"
+
 @interface XJFileManager()
 
 @end
@@ -35,7 +36,7 @@
     return isFolder;
 }
 
-+ (NSString*)getPath:(NSString*)path andDirectoryName:(nullable NSString*)directoryName andFileName:(NSString*)fileName{
++ (nullable NSString*)getPath:(NSString*)path andDirectoryName:(nullable NSString*)directoryName andFileName:(nullable NSString*)fileName{
     NSString *directoryPath = path;
     if (directoryName.length) {
        directoryPath = [path stringByAppendingPathComponent:directoryName];
@@ -44,35 +45,22 @@
         BOOL success = [NSFileManager.defaultManager createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
         if (!success) return nil;
     }
-    return [directoryPath stringByAppendingPathComponent:fileName];
+    if (fileName) {
+        return [directoryPath stringByAppendingPathComponent:fileName];
+    }
+    return directoryPath;
 }
 
-
-
-+ (void)clearCache{
-    NSEnumerator *filesEnumerator = [[NSFileManager.defaultManager subpathsAtPath:[self cachePath]] objectEnumerator];
++ (BOOL)clearAllItemsAtPath:(NSString *)path{
+    NSEnumerator *filesEnumerator = [[NSFileManager.defaultManager subpathsAtPath:path] objectEnumerator];
     NSString *filePath;
+    BOOL success = NO;
     while ((filePath = [filesEnumerator nextObject]) != nil) {
         NSString *subPath = [[self cachePath] stringByAppendingPathComponent:filePath];
-        [NSFileManager.defaultManager removeItemAtPath:subPath error:nil];
+        success = [NSFileManager.defaultManager removeItemAtPath:subPath error:nil];
+        if (!success)break;
     }
-}
-
-+ (void)clearCacheNormalFiles{
-    NSEnumerator *filesEnumerator = [[NSFileManager.defaultManager subpathsAtPath:[self cachePath]] objectEnumerator];
-    NSString *filePath;
-    while ((filePath = [filesEnumerator nextObject]) != nil) {
-        NSString *subPath = [[self cachePath] stringByAppendingPathComponent:filePath];
-        NSUInteger integer = [NSFileManager.defaultManager attributesOfItemAtPath:subPath error:nil].filePosixPermissions;
-        //默认写入420权限的文件删除
-        if (integer == 420) {
-            [NSFileManager.defaultManager removeItemAtPath:subPath error:nil];
-        }
-    }
-}
-
-+ (long long)cacheDataSize{
-    return [self fileSizeAtPath:[self cachePath]];
+    return success;
 }
 
 + (long long)fileSizeAtPath:(NSString*)path{

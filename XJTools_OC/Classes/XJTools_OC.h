@@ -2,7 +2,7 @@
 //  Header.h
 //  XJTools_OC
 //
-//  Created by 荆学龙 on 2019/7/20.
+//  Created by Jingxuelong on 2018/4/21.
 //  Copyright © 2019 jingxuelong. All rights reserved.
 //
 
