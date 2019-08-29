@@ -14,6 +14,7 @@
 #import "XJCacheManager.h"
 #import "XJFileManager.h"
 #import "XJTools_OC.h"
+#import "XJ_UI_Creater.h"
 
 FOUNDATION_EXPORT double XJTools_OCVersionNumber;
 FOUNDATION_EXPORT const unsigned char XJTools_OCVersionString[];
