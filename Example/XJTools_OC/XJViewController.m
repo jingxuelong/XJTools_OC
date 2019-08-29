@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 #import <XJTools_OC.h>
 #import "EXTScope.h"
+
 #import "XJLocalModel.h"
 
 @interface XJViewController ()
@@ -29,14 +30,34 @@
     view.xj_Height = 100;
     view.xj_CenterX = XJ_Screen_Wide/2.0;
     view.xj_CenterY = XJ_Screen_Height/2.0;
-    [self.view addSubview:view];
+//    [self.view addSubview:view];
     
 //    XJLocalModel *model = [[XJLocalModel alloc] init];
 //    model.name = @"XJLocalModel";
 //    model.time = @"10:41";
     
 //     [XJCacheManager.shareManager xj_setObject_DishCache:model forKey:@"LocalModel"];
-    XJLocalModel *model = [XJCacheManager.shareManager xj_ObjectForKey_DishCache:@"LocalModel"];
+//    XJLocalModel *model = [XJCacheManager.shareManager xj_ObjectForKey_DishCache:@"LocalModel"];
+    
+    XJVerticalButton *button = [XJVerticalButton buttonWithType:UIButtonTypeCustom];
+    button.xj_Wide = 200;
+    button.xj_Height = 100;
+    button.xj_CenterX = XJ_Screen_Wide/2.0;
+    button.xj_CenterY = XJ_Screen_Height/2.0;
+    button.backgroundColor = UIColor.lightGrayColor;
+    button.xj_title = @"abc";
+    button.xj_imageName = @"broadDefault-1";
+
+//    [self.view addSubview:button];
+    
+    
+    XJVerticalButton *buttonA = [XJVerticalButton buttonWithType:UIButtonTypeCustom andImageName:@"broadDefault-1" andTitle:@"Button" andImageEdge:UIEdgeInsetsMake(10, 75, 40, 75) andTitleEdge:UIEdgeInsetsMake(70, 0, 10, 0)];
+    buttonA.xj_Wide = 200;
+    buttonA.xj_Height = 100;
+    buttonA.xj_CenterX = XJ_Screen_Wide/2.0;
+    buttonA.xj_CenterY = XJ_Screen_Height/2.0;
+    buttonA.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:buttonA];
     
     
     @weakify(self);

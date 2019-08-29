@@ -19,7 +19,8 @@
 
 #import <XJFileManager.h>
 #import "XJCacheManager.h"
-
+#import "XJ_UI_Creater.h"
+#import "XJVerticalButton.h"
 #import "UIView+XJExtension.h"
 
 #endif /* Header_h */

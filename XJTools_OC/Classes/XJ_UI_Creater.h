@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XJ_UI_Creater : NSObject
 
++ (UIButton*)getButtonTitle:(nullable NSString*)title titleColor:(nullable UIColor*)titleColor titleFont:(nullable UIFont*)font imageName:(nullable NSString*)imageName;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
