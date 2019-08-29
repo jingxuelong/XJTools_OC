@@ -23,6 +23,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		88D1820423137DFE009E7CB6 /* XJLocalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D1820323137DFE009E7CB6 /* XJLocalModel.m */; };
 		D847EB4C5051E20437EC0FC0 /* Pods_XJTools_OC_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57ACE4728A489A05A486D385 /* Pods_XJTools_OC_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,10 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88D1820223137DFE009E7CB6 /* XJLocalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJLocalModel.h; sourceTree = "<group>"; };
+		88D1820323137DFE009E7CB6 /* XJLocalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJLocalModel.m; sourceTree = "<group>"; };
+		88E1EC8C230E422C00A4E97F /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		88E1EC8D230E422C00A4E97F /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		99CA96209F6B030C3DE11348 /* Pods_XJTools_OC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJTools_OC_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F159F6E1C7DE2E2253FEF04 /* Pods-XJTools_OC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJTools_OC_Tests.release.xcconfig"; path = "Target Support Files/Pods-XJTools_OC_Tests/Pods-XJTools_OC_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A162B40A879FE2EEF743CFA4 /* Pods-XJTools_OC_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJTools_OC_Example.release.xcconfig"; path = "Target Support Files/Pods-XJTools_OC_Example/Pods-XJTools_OC_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,10 +137,13 @@
 		6003F593195388D20070C39A /* Example for XJTools_OC */ = {
 			isa = PBXGroup;
 			children = (
+				88E1EC8B230E422C00A4E97F /* Header */,
 				6003F59C195388D20070C39A /* XJAppDelegate.h */,
 				6003F59D195388D20070C39A /* XJAppDelegate.m */,
 				6003F5A5195388D20070C39A /* XJViewController.h */,
 				6003F5A6195388D20070C39A /* XJViewController.m */,
+				88D1820223137DFE009E7CB6 /* XJLocalModel.h */,
+				88D1820323137DFE009E7CB6 /* XJLocalModel.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -183,6 +191,15 @@
 				B4408D3127338C3FF280D8ED /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		88E1EC8B230E422C00A4E97F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				88E1EC8C230E422C00A4E97F /* metamacros.h */,
+				88E1EC8D230E422C00A4E97F /* EXTScope.h */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		9648BC44904F9C9C264CA5F4 /* Pods */ = {
@@ -370,6 +387,7 @@
 				6003F59E195388D20070C39A /* XJAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* XJViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				88D1820423137DFE009E7CB6 /* XJLocalModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

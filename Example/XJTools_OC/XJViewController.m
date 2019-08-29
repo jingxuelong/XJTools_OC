@@ -9,6 +9,9 @@
 #import "XJViewController.h"
 #import <objc/runtime.h>
 #import <XJTools_OC.h>
+#import "EXTScope.h"
+#import "XJLocalModel.h"
+
 @interface XJViewController ()
 
 @end
@@ -28,8 +31,18 @@
     view.xj_CenterY = XJ_Screen_Height/2.0;
     [self.view addSubview:view];
     
+//    XJLocalModel *model = [[XJLocalModel alloc] init];
+//    model.name = @"XJLocalModel";
+//    model.time = @"10:41";
+    
+//     [XJCacheManager.shareManager xj_setObject_DishCache:model forKey:@"LocalModel"];
+    XJLocalModel *model = [XJCacheManager.shareManager xj_ObjectForKey_DishCache:@"LocalModel"];
+    
+    
+    @weakify(self);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"%@",XJFileManager.documentsPath);
+        @strongify(self);
         NSURL *webGifImageUrl = [NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2805094609,3291864996&fm=26&gp=0.gif"];
         NSData *data = [NSData dataWithContentsOfURL:webGifImageUrl];
         //cache目录每次写入
@@ -65,12 +78,15 @@
             [NSUserDefaults.standardUserDefaults synchronize];
         }
         
-        
+         success = [XJCacheManager.shareManager xj_setObject_DishCache:@"abc" forKey:@"name"];
+        NSString *name = [XJCacheManager.shareManager xj_ObjectForKey_DishCache:@"name"];
+        NSLog(@"aaaa= = %@",name);
         [self logFileAndPathSize];
 
     });
     
 }
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self logFileAndPathSize];
@@ -102,7 +118,7 @@ void JprintMenthWithClass(Class class){
         Method meth = menthPoint[i];
         NSLog(@"%@",NSStringFromSelector(method_getName(meth)));
     }
-    
+    free(menthPoint);
     
     Count = 0;
     
@@ -113,6 +129,7 @@ void JprintMenthWithClass(Class class){
         NSLog(@"%@",[NSString stringWithUTF8String:ivar_getName(var)]);
     }
     
+    free(varlist);
     
     Count = 0;
     
@@ -122,6 +139,7 @@ void JprintMenthWithClass(Class class){
         objc_property_t objc_property = objc_propertyList[i];
         NSLog(@"%@",[NSString stringWithUTF8String:property_getName(objc_property)]);
     }
+    free(objc_propertyList);
     
 }
 

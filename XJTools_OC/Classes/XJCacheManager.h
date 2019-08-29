@@ -30,6 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)xj_setObject_DishCache:(nullable id <NSCoding>)object forKey:(nonnull NSString*)key;
 - (nullable id)xj_ObjectForKey_DishCache:(nonnull NSString*)key;
+
+
+/**
+ 本类写入Library下数据
+ */
 - (void)xj_clearAllDishCache;
 
 
