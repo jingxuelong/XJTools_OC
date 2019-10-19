@@ -2,7 +2,7 @@
 //  UIView+XJExtension.h
 //  Pods
 //
-//  Created by Jingxuelong on 2019/7/20.
+//  Created by Jingxuelong on 2018/4/21.
 //
 
 #import <UIKit/UIKit.h>
@@ -35,4 +35,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+
+@interface UIImage (XJExtension)
+
+
+/**
+根据颜色创建图片
+*/
++ (UIImage *)imageWithColor:(UIColor *)color;
+
+@end
 NS_ASSUME_NONNULL_END

@@ -2,7 +2,7 @@
 //  XJVerticalButton.m
 //  Pods-XJTools_OC_Example
 //
-//  Created by Jingxuelong on 2019/8/29.
+//  Copyright © 2018 jingxuelong. All rights reserved.
 //
 
 #import "XJVerticalButton.h"

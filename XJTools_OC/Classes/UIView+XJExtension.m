@@ -2,7 +2,7 @@
 //  UIView+XJExtension.m
 //  Pods
 //
-//  Created by Jingxuelong on 2019/7/20.
+//  Created by Jingxuelong on 2018/4/21.
 //
 
 #import "UIView+XJExtension.h"
@@ -83,6 +83,20 @@
     return image;
 }
 
+@end
 
+
+@implementation UIImage (XJExtension)
+
++ (UIImage *)imageWithColor:(UIColor *)color{
+    CGRect rect = CGRectMake(0, 0, 1, 1);  
+    UIGraphicsBeginImageContext(rect.size);  
+    CGContextRef context = UIGraphicsGetCurrentContext();  
+    CGContextSetFillColorWithColor(context,color.CGColor);  
+    CGContextFillRect(context, rect);  
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();  
+    UIGraphicsEndImageContext();  
+    return img;  
+}
 
 @end
