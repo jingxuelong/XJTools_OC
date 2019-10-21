@@ -22,8 +22,8 @@
 
 //适配值
 #define XJWideScale               (k_XJScreen_Wide/375.0)
-#define XJAutoValue(value)               (k_XJWideScale*(value))
-
+#define XJAutoValue(value)               (XJWideScale*(value))
+#define XJAutoWideValueIphoneXAppend(value,append)     (is_XJIphoneWithSafeArea ? XJAutoValue(value+append) : XJAutoValue(value))
 
 //BOOL 判断值
 #define is_XJIphone                  ((UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone)?YES:NO)
@@ -38,29 +38,17 @@ hasSafeArea = [[UIApplication sharedApplication] delegate].window.safeAreaInsets
 
 //字体
 
-/**
-苹方-简 中黑体 PingFangSC-Medium
- */
-#define XJFontPF_Medium(Value)       [UIFont fontWithName:@"PingFangSC-Medium" size:Value]
-/**
-苹方-简 中粗体 PingFangSC-Semibold
-*/
-#define XJFontPF_Semibold(Value)       [UIFont fontWithName:@"PingFangSC-Semibold" size:Value]
-/**
-苹方-简 细体 PingFangSC-Light
- */
-#define XJFontPF_Light(Value)       [UIFont fontWithName:@"PingFangSC-Light" size:Value]
-/**
-苹方-简 极细体 PingFangSC-Ultralight
-*/
-#define XJFontPF_Ultralight(Value)       [UIFont fontWithName:@"PingFangSC-Ultralight" size:Value]
-/**
-苹方-简 常规体 PingFangSC-Regular
-*/
+//苹方-简 常规体       PingFangSC-Regular
 #define XJFontPF_Regular(Value)       [UIFont fontWithName:@"PingFangSC-Regular" size:Value]
-/**
-苹方-简 纤细体 PingFangSC-Thin
-*/
+//苹方-简 中黑体      PingFangSC-Medium
+#define XJFontPF_Medium(Value)       [UIFont fontWithName:@"PingFangSC-Medium" size:Value]
+//苹方-简 中粗体      PingFangSC-Semibold
+#define XJFontPF_Semibold(Value)       [UIFont fontWithName:@"PingFangSC-Semibold" size:Value]
+//苹方-简 细体        PingFangSC-Light
+#define XJFontPF_Light(Value)       [UIFont fontWithName:@"PingFangSC-Light" size:Value]
+//苹方-简 极细体       PingFangSC-Ultralight
+#define XJFontPF_Ultralight(Value)       [UIFont fontWithName:@"PingFangSC-Ultralight" size:Value]
+//苹方-简 纤细体       PingFangSC-Thin
 #define XJFontPF_Thin(Value)       [UIFont fontWithName:@"PingFangSC-Thin" size:Value]
 
 
