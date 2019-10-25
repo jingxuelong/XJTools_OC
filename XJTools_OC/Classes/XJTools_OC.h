@@ -12,12 +12,12 @@
 #define k_XJScreen_Wide                          [UIScreen mainScreen].bounds.size.width
 #define k_XJScreen_Height                        [UIScreen mainScreen].bounds.size.height
 
-#define k_XJStatusBarHeight       UIApplication.sharedApplication.statusBarFrame.size.height
+#define k_XJStatusBarHeight       (is_XJIphoneWithSafeArea? 44.0 : 20.0)
 #define k_XJNavHeight             44.0
 #define k_XJBothNavAndStatusHeight    (k_XJStatusBarHeight+k_XJNavHeight)
 
 #define k_XJTabbarHeight          49.0
-#define k_XJTabbarSafeAreaHeight      (is_XJIphoneWithSafeArea?34.0:0.0)
+#define k_XJTabbarSafeAreaHeight      (is_XJIphoneWithSafeArea? 34.0 : 0.0)
 #define k_XJBothTabbarAndSafeAreaHeight          (k_XJTabbarHeight+k_XJTabbarSafeAreaHeight)
 
 //适配值
